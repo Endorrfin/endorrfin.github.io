@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vasyl Krupka — Senior Backend / Full-Stack Engineer</title>
+<meta name="description" content="Senior Backend / Full-Stack Engineer. Node.js, NestJS, PostgreSQL, AWS. Production platform built and run solo, plus eight interactive engineering guides.">
+<link rel="canonical" href="https://endorrfin.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vasyl Krupka — Senior Backend / Full-Stack Engineer">
+<meta property="og:description" content="I ship production systems end to end and make legacy ones safe again. Node.js · NestJS · PostgreSQL · AWS.">
+<meta property="og:url" content="https://endorrfin.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root{
+    --bg:#0a1626; --bg2:#0d1e33; --panel:#102542; --panel2:#0e2039;
+    --line:#1c3a5e; --line2:#24486f;
+    --fg:#e8f1fa; --fg2:#a9c2da; --fg3:#7b97b4;
+    --accent:#38bdf8; --accent2:#22d3ee; --accent-dim:#1a5a7a;
+    --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font:16px/1.65 var(--sans); -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent); text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1040px; margin:0 auto; padding:0 20px}
+
+  /* ---------- header ---------- */
+  header{
+    background:
+      radial-gradient(900px 340px at 78% -10%, rgba(56,189,248,.13), transparent 60%),
+      linear-gradient(180deg,#0b1a2d 0%, var(--bg) 100%);
+    border-bottom:1px solid var(--line);
+  }
+  .hd{padding-block:56px 44px}
+  h1{
+    margin:0; font-size:clamp(28px,5.2vw,44px); font-weight:700; letter-spacing:-.02em;
+  }
+  .role{
+    margin:10px 0 0; font-family:var(--mono); font-size:clamp(12px,2.4vw,14px);
+    letter-spacing:.14em; text-transform:uppercase; color:var(--accent2);
+  }
+  .rule{width:64px; height:2px; background:var(--accent); margin:18px 0 20px; border-radius:2px}
+  .lede{margin:0; max-width:62ch; color:var(--fg2); font-size:clamp(15px,2.6vw,17px)}
+  .stack{
+    margin:22px 0 0; font-family:var(--mono); font-size:13px; color:var(--fg2);
+    line-height:2;
+  }
+  .stack b{color:var(--fg); font-weight:600}
+  .links{display:flex; flex-wrap:wrap; gap:10px; margin-top:26px; padding:0; list-style:none}
+  .links a{
+    display:inline-block; padding:8px 14px; border:1px solid var(--line2); border-radius:6px;
+    font-family:var(--mono); font-size:13px; color:var(--fg); background:rgba(16,37,66,.55);
+  }
+  .links a:hover{border-color:var(--accent); color:var(--accent); text-decoration:none}
+  .links a span{color:var(--fg3)}
+
+  /* ---------- sections ---------- */
+  section{padding-block:52px; border-bottom:1px solid var(--line)}
+  section:last-of-type{border-bottom:0}
+  h2{
+    margin:0 0 6px; font-size:13px; font-family:var(--mono); font-weight:600;
+    letter-spacing:.16em; text-transform:uppercase; color:var(--accent2);
+  }
+  .sub{margin:0 0 26px; color:var(--fg3); font-size:14px; max-width:64ch}
+
+  /* ---------- production panel ---------- */
+  .prod{
+    border:1px solid var(--line2); border-radius:10px; overflow:hidden;
+    background:linear-gradient(180deg,var(--panel) 0%, var(--panel2) 100%);
+  }
+  .prod-top{padding:26px 26px 4px}
+  .prod h3{margin:0 0 4px; font-size:21px; letter-spacing:-.01em}
+  .prod h3 a{color:var(--fg)}
+  .prod h3 a:hover{color:var(--accent)}
+  .prod p{margin:0 0 20px; color:var(--fg2); max-width:70ch; font-size:15px}
+  .metrics{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(112px,1fr));
+    gap:1px; background:var(--line); border-top:1px solid var(--line);
+  }
+  .metric{background:var(--panel2); padding:16px 18px}
+  .metric b{display:block; font-family:var(--mono); font-size:19px; color:var(--fg); font-weight:600}
+  .metric span{display:block; margin-top:3px; font-size:11.5px; color:var(--fg3); letter-spacing:.04em; text-transform:uppercase}
+
+  /* ---------- diagram ---------- */
+  figure{margin:26px 0 0}
+  .diagram{
+    border:1px solid var(--line2); border-radius:10px; background:var(--panel2);
+    padding:22px 18px; overflow-x:auto;
+  }
+  .diagram svg{display:block; margin:0 auto; max-width:100%; height:auto; min-width:560px}
+  figcaption{margin-top:10px; font-size:12.5px; color:var(--fg3); font-family:var(--mono)}
+
+  /* ---------- guide cards ---------- */
+  .grid{display:grid; gap:14px; grid-template-columns:repeat(auto-fill,minmax(290px,1fr))}
+  .card{
+    display:flex; flex-direction:column; border:1px solid var(--line); border-radius:10px;
+    background:var(--panel2); padding:20px; transition:border-color .15s, transform .15s;
+  }
+  .card:hover{border-color:var(--accent-dim); transform:translateY(-2px)}
+  .card .no{font-family:var(--mono); font-size:11px; color:var(--fg3); letter-spacing:.1em}
+  .card h3{margin:8px 0 6px; font-size:16.5px; letter-spacing:-.01em}
+  .card h3 a{color:var(--fg)}
+  .card:hover h3 a{color:var(--accent); text-decoration:none}
+  .card p{margin:0 0 14px; font-size:14px; color:var(--fg2); flex:1}
+  .tags{display:flex; flex-wrap:wrap; gap:6px; margin:0; padding:0; list-style:none}
+  .tags li{
+    font-family:var(--mono); font-size:11px; color:var(--fg3);
+    border:1px solid var(--line); border-radius:4px; padding:2px 7px;
+  }
+
+  .also{margin:18px 0 0; font-size:14px; color:var(--fg3)}
+  .also b{color:var(--fg2); font-weight:600}
+
+  /* ---------- footer ---------- */
+  footer{padding-block:38px 46px; color:var(--fg3); font-size:13.5px}
+  footer p{margin:0 0 6px}
+  .mono{font-family:var(--mono)}
+
+  @media (max-width:560px){
+    .hd{padding-block:40px 34px}
+    section{padding-block:40px}
+    .prod-top{padding:20px 20px 4px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .card{transition:none}
+    .card:hover{transform:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hd">
+    <h1>Vasyl Krupka</h1>
+    <p class="role">Senior Backend&nbsp;/ Full-Stack Engineer</p>
+    <div class="rule"></div>
+    <p class="lede">
+      I ship production systems end to end and make legacy ones safe again.
+      Currently the sole engineer of a humanitarian-aid platform that runs on AWS serverless
+      with no DevOps headcount behind it.
+    </p>
+    <p class="stack">
+      <b>Backend</b> &nbsp;Node.js · NestJS · TypeScript · PostgreSQL · TypeORM<br>
+      <b>Cloud</b> &nbsp;&nbsp;&nbsp;&nbsp;AWS Lambda · API Gateway · RDS · S3 · CloudFront · Serverless Framework<br>
+      <b>Frontend</b> Angular (signals, SSR) · React 19 · Vite · RxJS
+    </p>
+    <ul class="links">
+      <li><a href="https://github.com/Endorrfin">GitHub <span>↗</span></a></li>
+      <li><a href="https://www.linkedin.com/in/vasyl-krupka/">LinkedIn <span>↗</span></a></li>
+      <li><a href="https://csd-fund.org">csd-fund.org <span>↗</span></a></li>
+      <li><a href="mailto:krupka.ua@gmail.com">krupka.ua@gmail.com</a></li>
+    </ul>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Production</h2>
+    <p class="sub">A live platform I designed, built and still operate.</p>
+
+    <div class="prod">
+      <div class="prod-top">
+        <h3><a href="https://csd-fund.org">csd-fund.org</a></h3>
+        <p>
+          Aid-management platform for a Ukrainian humanitarian organisation whose institutional donors
+          require a traceable record behind every application. I own architecture, backend, frontend,
+          AWS infrastructure, CI/CD and production support. Role-based access control, an audit trail
+          that outlives record deletion, and generated bilingual exports that replaced
+          hand-assembled donor reporting.
+        </p>
+      </div>
+      <div class="metrics">
+        <div class="metric"><b>118</b><span>REST endpoints</span></div>
+        <div class="metric"><b>15</b><span>NestJS modules</span></div>
+        <div class="metric"><b>29</b><span>entities</span></div>
+        <div class="metric"><b>14</b><span>migrations</span></div>
+        <div class="metric"><b>5</b><span>access roles</span></div>
+      </div>
+    </div>
+
+    <figure>
+      <div class="diagram">
+        <svg viewBox="0 0 880 250" role="img" aria-labelledby="dgt dgd">
+          <title id="dgt">Request flow of the csd-fund.org platform</title>
+          <desc id="dgd">A browser request reaches CloudFront, which serves static assets from S3 and server-side rendered pages from an Angular SSR Lambda. API calls go through API Gateway to a NestJS Lambda, which reads and writes PostgreSQL on RDS and private media on S3. GitHub Actions deploys all of it.</desc>
+          <defs>
+            <marker id="ar" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+              <path d="M0,0 L9,4.5 L0,9 z" fill="#3d6d99"/>
+            </marker>
+            <style>
+              .bx{fill:#0e2039;stroke:#24486f;stroke-width:1.2;rx:7}
+              .bxa{fill:#10314d;stroke:#38bdf8;stroke-width:1.3;rx:7}
+              .t{fill:#e8f1fa;font:600 13px ui-monospace,Menlo,Consolas,monospace}
+              .s{fill:#7b97b4;font:11px ui-monospace,Menlo,Consolas,monospace}
+              .ln{stroke:#3d6d99;stroke-width:1.3;fill:none;marker-end:url(#ar)}
+              .lbl{fill:#7b97b4;font:10.5px ui-monospace,Menlo,Consolas,monospace}
+            </style>
+          </defs>
+
+          <rect class="bx" x="8"   y="96"  width="104" height="52"/>
+          <text class="t" x="60"  y="118" text-anchor="middle">Browser</text>
+          <text class="s" x="60"  y="134" text-anchor="middle">UA / EN</text>
+
+          <rect class="bxa" x="160" y="96"  width="116" height="52"/>
+          <text class="t" x="218" y="118" text-anchor="middle">CloudFront</text>
+          <text class="s" x="218" y="134" text-anchor="middle">CDN + TLS</text>
+
+          <rect class="bx" x="330" y="16"  width="128" height="52"/>
+          <text class="t" x="394" y="38"  text-anchor="middle">S3</text>
+          <text class="s" x="394" y="54"  text-anchor="middle">static bundle</text>
+
+          <rect class="bx" x="330" y="96"  width="128" height="52"/>
+          <text class="t" x="394" y="118" text-anchor="middle">SSR Lambda</text>
+          <text class="s" x="394" y="134" text-anchor="middle">Angular 21</text>
+
+          <rect class="bxa" x="330" y="176" width="128" height="52"/>
+          <text class="t" x="394" y="198" text-anchor="middle">API Gateway</text>
+          <text class="s" x="394" y="214" text-anchor="middle">/api/*</text>
+
+          <rect class="bxa" x="516" y="176" width="140" height="52"/>
+          <text class="t" x="586" y="198" text-anchor="middle">NestJS Lambda</text>
+          <text class="s" x="586" y="214" text-anchor="middle">118 endpoints</text>
+
+          <rect class="bx" x="716" y="176" width="152" height="52"/>
+          <text class="t" x="792" y="198" text-anchor="middle">RDS PostgreSQL</text>
+          <text class="s" x="792" y="214" text-anchor="middle">29 entities</text>
+
+          <rect class="bx" x="716" y="96"  width="152" height="52"/>
+          <text class="t" x="792" y="118" text-anchor="middle">S3 (private)</text>
+          <text class="s" x="792" y="134" text-anchor="middle">presigned media</text>
+
+          <path class="ln" d="M112,122 H154"/>
+          <path class="ln" d="M276,116 C300,116 302,42 324,42"/>
+          <path class="ln" d="M276,122 H324"/>
+          <path class="ln" d="M276,128 C300,128 302,202 324,202"/>
+          <path class="ln" d="M458,202 H510"/>
+          <path class="ln" d="M656,202 H710"/>
+          <path class="ln" d="M656,196 C684,196 686,122 710,122"/>
+
+          <text class="lbl" x="296" y="34">assets</text>
+          <text class="lbl" x="284" y="112">pages</text>
+          <text class="lbl" x="300" y="246">data</text>
+        </svg>
+      </div>
+      <figcaption>Request flow · Serverless Framework + GitHub Actions deploy every tier</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Interactive engineering guides</h2>
+    <p class="sub">
+      Open-source applications rather than articles. Each one runs deterministic simulation engines
+      whose output is captured from the real runtime and asserted in tests, so a diagram cannot drift
+      from what your terminal prints. Bilingual EN/UA. Nothing deploys until typecheck, lint, engine
+      tests and smoke checks pass in CI.
+    </p>
+
+    <div class="grid">
+
+      <article class="card">
+        <span class="no">01</span>
+        <h3><a href="https://endorrfin.github.io/nodejs-comprehensive-guide/">Node.js Internals</a></h3>
+        <p>21 chapters and 15 step-through simulators: event-loop phases, the libuv thread pool, V8 and garbage collection, streams, production patterns.</p>
+        <ul class="tags"><li>React 19</li><li>TypeScript</li><li>Vite</li></ul>
+      </article>
+
+      <article class="card">
+        <span class="no">02</span>
+        <h3><a href="https://endorrfin.github.io/system-design/">System Design</a></h3>
+        <p>Four problems engineered end to end with live simulators: broadcast on rate-limited channels, a Kafka log with replay, ACID slot booking, and GDPR deletion in a searchable archive.</p>
+        <ul class="tags"><li>BullMQ</li><li>Kafka</li><li>Redis</li><li>PostgreSQL</li></ul>
+      </article>
+
+      <article class="card">
+        <span class="no">03</span>
+        <h3><a href="https://endorrfin.github.io/database-comprehensive-guide/">Databases</a></h3>
+        <p>An internals-first tour: the relational model, B-tree and LSM storage, transactions and isolation, distribution, vector and distributed SQL.</p>
+        <ul class="tags"><li>SQL</li><li>NoSQL</li><li>Indexing</li></ul>
+      </article>
+
+      <article class="card">
+        <span class="no">04</span>
+        <h3><a href="https://endorrfin.github.io/api-styles-comprehensive-guide/">API Styles</a></h3>
+        <p>25 modules and 9 hand-built interactives — a protobuf wire encoder, a GraphQL N+1 tree, a WebSocket frame timeline. REST, GraphQL, gRPC, SSE, WebRTC, Webhooks, SOAP, OData.</p>
+        <ul class="tags"><li>REST</li><li>GraphQL</li><li>gRPC</li></ul>
+      </article>
+
+      <article class="card">
+        <span class="no">05</span>
+        <h3><a href="https://endorrfin.github.io/computer-science/">Computer Science</a></h3>
+        <p>An interactive journey from transistors to modern AI, built on live emulators and steppable simulators.</p>
+        <ul class="tags"><li>React 19</li><li>Simulators</li></ul>
+      </article>
+
+      <article class="card">
+        <span class="no">06</span>
+        <h3><a href="https://endorrfin.github.io/typescript-comprehensive-guide/">TypeScript</a></h3>
+        <p>Structural typing, inference, generics and type-level programming — with the compiler behaviour demonstrated rather than described.</p>
+        <ul class="tags"><li>TypeScript</li><li>strict</li></ul>
+      </article>
+
+      <article class="card">
+        <span class="no">07</span>
+        <h3><a href="https://endorrfin.github.io/design-principles-patterns/">Design Principles &amp; Patterns</a></h3>
+        <p>49 concepts mapped and made navigable: SOLID, the GoF catalogue, architectural and composition patterns, with study tools.</p>
+        <ul class="tags"><li>SOLID</li><li>GoF</li><li>Architecture</li></ul>
+      </article>
+
+      <article class="card">
+        <span class="no">08</span>
+        <h3><a href="https://endorrfin.github.io/claude-comprehensive-guide/">Claude &amp; Agentic Workflows</a></h3>
+        <p>A practical field guide — prompting, Projects, MCP, Skills, and agentic workflows in Claude Code and Cowork.</p>
+        <ul class="tags"><li>MCP</li><li>Agents</li></ul>
+      </article>
+
+    </div>
+
+    <p class="also">
+      <b>Also:</b>
+      <a href="https://endorrfin.github.io/world-explorer/">World Explorer</a> — an interactive geography app built for children.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Chernivtsi, Ukraine · UTC+3 · open to remote roles</p>
+    <p class="mono">
+      <a href="mailto:krupka.ua@gmail.com">krupka.ua@gmail.com</a> ·
+      <a href="https://github.com/Endorrfin">github.com/Endorrfin</a> ·
+      <a href="https://www.linkedin.com/in/vasyl-krupka/">linkedin.com/in/vasyl-krupka</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
